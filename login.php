@@ -86,7 +86,7 @@ if (isset($_POST["btn_submit"])) {
                                     </div>
                                     <form class="user" method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="email" placeholder="Enter Email Address..." required value="<?php if (isset($_POST['email'])) echo $_POST['email'];
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" required aria-describedby="emailHelp" name="email" placeholder="Enter Email Address..." required value="<?php if (isset($_POST['email'])) echo $_POST['email'];
                                                                                                                                                                                                                     else echo ""; ?>">
                                         </div>
                                         <div class="form-group">
