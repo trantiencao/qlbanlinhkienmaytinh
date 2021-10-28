@@ -33,18 +33,21 @@ if (isset($_POST["btn_submit"])) {
             $email = $_POST["email"];
             $phone = $_POST["phone"];
             $address = $_POST["address"];
-            $password = $_POST["password"];
-            $repeatpassword = $_POST["repeatpassword"];
+            $password = md5($_POST["password"]);
 
-            $sql = "INSERT INTO user(name,email,phone,address,password,create_at,update_at) VALUES ( '$name','$email', '$phone','$address', '$password','$date','$date')";
-            // thực thi câu $sql với biến conn lấy từ file connection.php
-            $result = mysqli_query($connect, $sql);
-            if ($result == true)
-                echo "<script type='text/javascript'>alert('Chúc mừng bạn đã đăng kí thành công!');</script>";
-            else
-                echo "lỗi";
+            // KIỂM TRA SỰ TỒN TẠI EMAIL CÓ TRƯỚC
+            $resultcheckacc = mysqli_query($connect, "SELECT * FROM user WHERE email = '$email'");
+            if (mysqli_num_rows($resultcheckacc) == 0) {
+                $sql = "INSERT INTO user(name,email,phone,address,password,create_at,update_at) VALUES ( '$name','$email', '$phone','$address', '$password','$date','$date')";
+                $result = mysqli_query($connect, $sql);
+                if ($result == true)
+                    echo "<script type='text/javascript'>alert('Chúc mừng bạn đã đăng kí thành công!');</script>";
+                else
+                    echo "<script type='text/javascript'>alert('Dữ liệu bị lỗi, vui lòng nhập lại');</script>";
+            } else
+                echo "<script type='text/javascript'>alert('Email đã tồn tại');</script>";
         } else {
-            echo "<script type='text/javascript'>alert('Mật khẩu chưa trùng khớp!');</script>";
+            echo "<script type='text/javascript'>alert('Nhập lại mật khẩu chưa trùng khớp!');</script>";
         }
     }
 }
