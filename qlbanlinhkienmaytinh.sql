@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 23, 2021 lúc 06:34 PM
+-- Thời gian đã tạo: Th10 28, 2021 lúc 09:55 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -188,8 +188,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `phone`, `address`, `password`, `create_at`, `update_at`, `level`) VALUES
-(10, 'Cao Admin', 'admin@php.hoclai', '0327147158', 'VN', '123', '2021-10-19 21:56:33', '2021-10-23 16:24:39', 1),
-(11, 'Trần Cao', 'cao@php.hoclai', '0327147158', 'VN', '123', '2021-10-19 22:01:03', '2021-10-23 16:24:58', 2);
+(10, 'Cao Admin', 'admin@php.hoclai', '0354541030', 'VN', '202cb962ac59075b964b07152d234b70', '2021-10-19 21:56:33', '2021-10-28 07:48:58', 1),
+(12, 'Trần Tiến Cao', 'cao@php.hoclai', '0354541030', 'VN', '202cb962ac59075b964b07152d234b70', '2021-10-27 19:48:42', '2021-10-27 19:48:42', 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -270,7 +270,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

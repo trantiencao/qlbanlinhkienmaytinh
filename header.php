@@ -37,8 +37,6 @@ if (isset($_POST['logout'])) {
     }
     if (isset($_SESSION['email']))
         unset($_SESSION['email']);
-    if (isset($_SESSION['password']))
-        unset($_SESSION['password']);
 }
 ?>
 

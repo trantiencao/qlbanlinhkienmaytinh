@@ -33,14 +33,14 @@ if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
 if (isset($_POST["btn_submit"])) {
     // lấy thông tin người dùng
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $password = md5($_POST["password"]);
     //làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
     //mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
 
     if ($email == "" || $password == "") {
         echo "<script type='text/javascript'>alert('Vui lòng nhập đầy đủ các trường!');</script>";
     } else {
-        $sql = "select * from user where email = '$email' and password = '$password' ";
+        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password' ";
         $query = mysqli_query($connect, $sql);
         $num_rows = mysqli_num_rows($query);
 
@@ -50,9 +50,8 @@ if (isset($_POST["btn_submit"])) {
             // Lấy ra thông tin người dùng và lưu vào session
             while ($data = mysqli_fetch_array($query)) {
                 $_SESSION["email"] = $data["email"];
-                $_SESSION['password'] = $data["password"];
-		$_SESSION['id_user'] = $data["id"];
-		$_SESSION['name'] = $data["name"];
+                $_SESSION['id_user'] = $data["id"];
+                $_SESSION['name'] = $data["name"];
                 $_SESSION['level'] = $data["level"];
                 $_SESSION["login"] = true;
             }

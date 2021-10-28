@@ -29,7 +29,7 @@
     session_start();
 	if(isset($_POST['login']))
 	{
-        header('Location: '.'login.php');
+        header('Location: login.php');
 		// redirectUrl('../login.php');
 	}
 	if(isset($_POST['logout']))
@@ -42,10 +42,7 @@
         }
             
         if(isset($_SESSION['email']))
-        unset($_SESSION['email']);
-        if(isset($_SESSION['password']))
-        unset($_SESSION['password']);
-        
+        unset($_SESSION['email']);       
 	}
 ?>
 <div class="wrap">
