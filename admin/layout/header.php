@@ -17,7 +17,7 @@
 </head>
 <?php
 session_start();
-error_reporting(0);
+//error_reporting(0);
 // session_destroy(); 
 if (isset($_POST['logout'])) {
     unset($_SESSION['login']);
@@ -126,7 +126,7 @@ if (isset($_POST['logout'])) {
                     </button>
 
                     <!-- Topbar Search -->
-                    <form
+                    <!-- <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
                             <input type="search" class="form-control bg-light border-0 small" placeholder="Search for..."
@@ -137,7 +137,7 @@ if (isset($_POST['logout'])) {
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </form> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

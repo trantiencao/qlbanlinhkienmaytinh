@@ -42,6 +42,22 @@ $soLuongDonHang  = mysqli_num_rows($query)
     <!-- Begin Page Content -->
     <h1 align="center">Danh Sách Đơn Hàng Chờ Duyệt</h1>
 
+    <!-- Search form -->
+    <div>
+        <form class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group" style="margin: 0 0 30px 25px;">
+                <input type="search" class="form-control bg-light small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+
     <?php
     if (isset($_GET['pages'])) {
         $pages = $_GET['pages'];

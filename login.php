@@ -24,7 +24,7 @@ error_reporting(0);
 require("admin/autoload/autoload.php");
 if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
     if ($_SESSION['level'] == 1) {
-        redirectUrl('/qlbanlinhkienmaytinh/admin');
+        redirectUrl('/admin');
     } elseif ($_SESSION['level'] == 2) {
         redirectUrl('/qlbanlinhkienmaytinh');
     }
@@ -87,11 +87,11 @@ if (isset($_POST["btn_submit"])) {
                                     </div>
                                     <form class="user" method="POST">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="email" placeholder="Enter Email Address..." value="<?php if (isset($_POST['email'])) echo $_POST['email'];
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" name="email" placeholder="Enter Email Address..." required value="<?php if (isset($_POST['email'])) echo $_POST['email'];
                                                                                                                                                                                                                     else echo ""; ?>">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" required placeholder="Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">

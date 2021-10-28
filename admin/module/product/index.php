@@ -6,6 +6,50 @@ require("../../autoload/autoload.php");
 <?php require("../../layout/header.php"); ?>
 <!-- Begin Page Content -->
 <h1 align="center">Danh Sách Sản Phẩm</h1>
+
+<!-- Search form -->
+    <div>
+        <form action="" method="GET" class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            
+                <input type="text" name="tensanpham" class="form-control bg-light small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2">
+                <input type="submit" value="Tìm Kiếm">
+                    <!-- <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button> -->
+        </form>
+    </div>
+
+    <?php
+        if($_SERVER['REQUEST_METHOD']=='GET')
+        {
+            if(empty($_GET['tensanpham'])) echo "<p align='center'>Vui lòng nhập tên sản phẩm</p>";
+            else
+            {
+                $tensanpham=$_GET['tensanpham'];	
+                
+                $query= "SELECT * FROM `product` WHERE `name` LIKE '%$tensanpham%'";
+                $result=mysqli_query($connect,$query);		
+                if(mysqli_num_rows($result)<>0)
+                {	$rows=mysqli_num_rows($result);
+                    echo "<div align='center'><b>Có $rows sản phẩm được tìm thấy.</b></div>";
+                    while($row=mysqli_fetch_array($result, MYSQLI_ASSOC))
+                    {
+                        
+                        echo '<table border="1" cellpadding="5" cellspacing="5" style="border-collapse:collapse;">
+                            <tr bgcolor="#eeeeee"><td colspan="2" align="center"><h3>'
+                          .$row['name'].'</h3></td></tr>';
+                        //echo '<tr><td width="200" align="center"><img src= "../../../public/uploads/product/' .$rows['avatar']. '/></td>';
+                        echo '<i><b>Thời gian khởi tạo: </b></i>'.
+                                $row['created_at'].' VNĐ';
+                        echo '</td></tr></table>';
+                    }
+                }
+                else echo "<div><b>Không tìm thấy sản phẩm này.</b></div>";
+            }
+        }
+    ?>
+
 <?php if (isset($_SESSION['success'])) : ?>
     <div class="alert alert-success">
         <?php echo $_SESSION['success'];
@@ -43,11 +87,11 @@ for ($i = 1; $i <= $totalPages; $i++) {
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <thead>
-                    <th width="5%">STT</th>
-                    <th width="50%">Tên sản phẩm</th>
-                    <th width="15%">Ảnh</th>
-                    <th width="12%">Thời gian khởi tạo</th>
-                    <th width="15%">Hành động</th>
+                    <th width="10%">STT</th>
+                    <th width="40%">Tên sản phẩm</th>
+                    <th width="10%">Ảnh</th>
+                    <th width="20%">Thời gian khởi tạo</th>
+                    <th width="20%">Hành động</th>
                 </thead>
                 <tbody>
                     <?php

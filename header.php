@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="vi">
 
-<head>
-    <title>TTC computer</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="user/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <head>
+        <title>TTC computer</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href="user/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+        <link href="./CSS/header.css" rel="stylesheet" type="text/css" media="all">
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Contact form JS-->
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
 
-    <!-- Core theme JS-->
-    <script src="user/layout/scripts/script.js"></script>
-</head>
+        <!-- Core theme JS-->
+        <script src="user/layout/scripts/script.js"></script>
+    </head>
 
 <?php
 session_start();
@@ -104,12 +105,16 @@ if (isset($_POST['logout'])) {
                 <div id="content-wrapper" class="d-flex flex-column">
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="search" name="input_search" style="margin-top: 6px; float: left; height: 100%; width: 80%" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="search-input">
+                                <i class="fa fa-search"></i>
+                                <input type="text" placeholder="Search for anything" />
+                            </div>
                             <div class="input-group-append" style="margin-left: 10px; float: left;">
-                                <form action="" method="post">
+                                <form action="" method="POST">
                                     <button class="btn btn-primary" type="submit" name="btn_search">
                                         <i class="fas fa-search fa-sm"></i>
                                     </button>
+                                    <
                                 </form>
                             </div>
                         </div>

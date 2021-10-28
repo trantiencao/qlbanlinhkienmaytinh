@@ -2,7 +2,7 @@
 <!-- main body -->
 <!-- ################################################################################################ -->
 <div style="margin-top: 4rem;" class="sectiontitle">
-  <h6 class="heading">Sản Phẩm Nhập Khẩu Mới Nguyên Siu Từ Mỹ</h6>
+  <h6 class="heading">Sản Phẩm Nhập Khẩu Mới Nguyên SEAL Từ Mỹ</h6>
   <p>New Imported Product From USA</p>
 </div>
 <ul class="nospace group overview">
