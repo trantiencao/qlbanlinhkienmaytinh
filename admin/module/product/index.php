@@ -8,14 +8,18 @@ require("../../autoload/autoload.php");
 <h1 align="center">Danh Sách Sản Phẩm</h1>
 
 <!-- Search form -->
-    <div>
+    <div id="searchForm" style="margin-bottom:20px;">
         <form action="" method="GET" class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             
                 <input type="text" name="tensanpham" class="form-control bg-light small" placeholder="Search for..."
                 aria-label="Search" aria-describedby="basic-addon2" 
                 value="<?php echo (isset($_GET['tensanpham'])) ? $_GET['tensanpham'] : ''; ?>">
-                
-                <input type="submit" value="Tìm Kiếm">
+                <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                <!-- <div class="input-group-append">
+                    
+                </div> -->
         </form>
     </div>
 
