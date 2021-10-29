@@ -16,10 +16,8 @@ require("../../autoload/autoload.php");
                 value="<?php echo (isset($_GET['tensanpham'])) ? $_GET['tensanpham'] : ''; ?>">
                 <button class="btn btn-primary" type="submit">
                         <i class="fas fa-search fa-sm"></i>
-                    </button>
-                <!-- <div class="input-group-append">
-                    
-                </div> -->
+                </button>
+              
         </form>
     </div>
 

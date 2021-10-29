@@ -43,44 +43,63 @@ $soLuongDonHang  = mysqli_num_rows($query)
     <h1 align="center">Danh Sách Đơn Hàng Chờ Duyệt</h1>
 
     <!-- Search form -->
-    <div>
-        <form class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group" style="margin: 0 0 30px 25px;">
-                <input type="search" class="form-control bg-light small" placeholder="Search for..."
-                aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
+    <div id="searchForm" style="margin-bottom:20px;">
+        <form action="" method="GET" class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            
+                <input type="text" name="madon" class="form-control bg-light small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2" 
+                value="<?php echo (isset($_GET['madon'])) ? $_GET['madon'] : ''; ?>">
+                <button class="btn btn-primary" type="submit">
                         <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
+                </button>
+              
         </form>
     </div>
     
 
     <?php
-    if (isset($_GET['pages'])) {
-        $pages = $_GET['pages'];
-    } else {
-        $pages = 1;
-    }
-
-    $rowPerpage = 5;
-    $perRow = $pages * $rowPerpage - $rowPerpage;
-
-    $sql = "SELECT * FROM `order` WHERE pending = 1";
-    $query = mysqli_query($connect, $sql);
-    $totalRows =  mysqli_num_rows(mysqli_query($connect, $sql));
-    $totalPages = ceil($totalRows / $rowPerpage); // ceil là làm tròn tăng thôi 4.1 lên 5. 4.4 lên 5
-
-    $listPages  = "";
-    for ($i = 1; $i <= $totalPages; $i++) {
-        if ($pages == $i) {
-            $listPages .= ' <li class="page-item active"><a href="index.php?pages=' . $i . '"></a>' . $i . '</a></li>';
+        if (isset($_GET['pages'])) {
+            $pages = $_GET['pages'];
         } else {
-            $listPages .= '<li class="page-item"><a href="index.php?pages=' . $i . '"></a>' . $i . '</a></li>';
+            $pages = 1;
         }
-    }
+
+        $rowPerpage = 5;
+        $perRow = $pages * $rowPerpage - $rowPerpage;
+
+        $sql = "SELECT * FROM `order` WHERE pending = 1";
+        $query = mysqli_query($connect, $sql);
+        $totalRows =  mysqli_num_rows(mysqli_query($connect, $sql));
+        $totalPages = ceil($totalRows / $rowPerpage); // ceil là làm tròn tăng thôi 4.1 lên 5. 4.4 lên 5
+
+        $listPages  = "";
+        for ($i = 1; $i <= $totalPages; $i++) {
+            if ($pages == $i) {
+                $listPages .= ' <li class="page-item active"><a href="index.php?pages=' . $i . '"></a>' . $i . '</a></li>';
+            } else {
+                $listPages .= '<li class="page-item"><a href="index.php?pages=' . $i . '"></a>' . $i . '</a></li>';
+            }
+        }
+
+        if($_SERVER['REQUEST_METHOD']=='GET' && !empty($_GET['madon'])) {
+            $madon=$_GET['madon'];	
+                
+            $sql= "SELECT * FROM `product` WHERE `name` LIKE '%$tensanpham%' LIMIT $perRow,$rowPerpage";
+    
+            $query=mysqli_query($connect,$sql);
+            if(mysqli_num_rows($query) > 0) {
+                $rows=mysqli_num_rows($query);
+                echo "<div align='center'><b>Có $rows đơn hàng được tìm thấy.</b></div>";
+            } else {
+                echo "<div align='center'><b>Không có giá trị phù hợp</b></div>";
+                $sql = "SELECT * FROM `product` LIMIT $perRow,$rowPerpage";
+                $query=mysqli_query($connect,$sql);
+            }
+            
+        } else {
+            $sql = "SELECT * FROM `product` LIMIT $perRow,$rowPerpage";
+            $query=mysqli_query($connect,$sql);
+        }
     ?>
 
     <div class="row">

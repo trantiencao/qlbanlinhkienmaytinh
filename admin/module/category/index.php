@@ -10,17 +10,16 @@
                     <h1 align="center">Danh Sách Danh Mục Sản Phẩm</h1>
 
                     <!-- Search form -->
-                    <div>
-                        <form class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                            <div class="input-group" style="margin: 0 0 30px 25px;">
-                                <input type="search" class="form-control bg-light small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
+                    <div id="searchForm" style="margin-bottom:20px;">
+                        <form action="" method="GET" class="d-flex d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                            
+                                <input type="text" name="loaisanpham" class="form-control bg-light small" placeholder="Search for..."
+                                aria-label="Search" aria-describedby="basic-addon2" 
+                                value="<?php echo (isset($_GET['loaisanpham'])) ? $_GET['loaisanpham'] : ''; ?>">
+                                <button class="btn btn-primary" type="submit">
                                         <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
-                            </div>
+                                </button>
+                            
                         </form>
                     </div>
 
@@ -62,6 +61,28 @@
                                 
                             }
                         }
+
+                        if($_SERVER['REQUEST_METHOD']=='GET' && !empty($_GET['loaisanpham'])) {
+                            $loaisanpham=$_GET['loaisanpham'];	
+                                
+                            $sql= "SELECT * FROM `category` WHERE `name` LIKE '%$loaisanpham%' LIMIT $perRow,$rowPerpage";
+                    
+                            $query=mysqli_query($connect,$sql);
+                            if(mysqli_num_rows($query) > 0) {
+                                $rows=mysqli_num_rows($query);
+                                echo "<div align='center'><b>Có $rows sản phẩm được tìm thấy.</b></div>";
+                                echo "<br>";
+                            } else {
+                                echo "<div align='center'><b>Không có giá trị phù hợp</b></div>";
+                                echo "<br>";
+                                $sql = "SELECT * FROM `category` LIMIT $perRow,$rowPerpage";
+                                $query=mysqli_query($connect,$sql);
+                            }
+                            
+                        } else {
+                            $sql = "SELECT * FROM `category` LIMIT $perRow,$rowPerpage";
+                            $query=mysqli_query($connect,$sql);
+                        }
                     ?>
 
                     <div class="row">
@@ -98,7 +119,7 @@
                                     </tbody>
                                     
                                 </table>
-                                <ul class="pagination">
+                                <ul class="pagination" style="justify-content: center;">
                                     <?php
                                         for($t = 1; $t <= $totalPages; $t++)
                                         {
