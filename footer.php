@@ -83,6 +83,7 @@
 <!-- Contact form JS-->
 
 <script src="user/layout/scripts/script.js"></script>
+
 </body>
 
 </html>
