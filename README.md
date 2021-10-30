@@ -26,17 +26,16 @@ sử dụng file -> qlbanlinhkienmaytinh.sql ở thư mục gốc qlbanlinhkienm
 * Với user account các bạn có thể đăng kí account mới để đăng nhập.
 
 1, Vào giao diện đầu tiên của web sẽ là Trang chủ, vì là trang web bán linh kiện máy tính 
-nên phần này sẽ chủ yếu để giới các sản phẩm của cửa hàng.
+nên phần này sẽ chủ yếu để giới các sản phẩm của cửa hàng.</br>
 2, Nếu muốn đặt hàng thì khách bắt buộc phải tạo tài khoản và đăng nhập tài khoản.
-Nút đăng nhập sẽ nằm ở góc phải của Trang chủ.
+Nút đăng nhập sẽ nằm ở góc phải của Trang chủ.</br>
 3, Nhóm đã phân quyền cho 2 nhóm người sử dụng đó là User(người mua hàng) và Admin(người quản lý - bán hàng).
-Các bạn có thể đăng nhập vào trang web theo các tài khoản đã giới thiệu ở trên.
+Các bạn có thể đăng nhập vào trang web theo các tài khoản đã giới thiệu ở trên.</br>
 4, Nhóm tài khoản User thì sau khi đăng nhập sẽ có chức năng đặt hàng.
-Để mua sản phẩm thì User phải thêm sản phẩm vào giỏ và đặt hàng.
+Để mua sản phẩm thì User phải thêm sản phẩm vào giỏ và đặt hàng.</br>
 5, Nhóm tài khoản Admin sau khi đăng nhập sẽ có thể đến phần giao diện bán hàng và cả chức năng quản lý đơn hàng,
 quản lý thêm xóa sửa sản phẩm.
-Nhóm đã phân quyền để nhóm tài khoản User không thể sử dụng chức năng quản lý này.
+Nhóm đã phân quyền để nhóm tài khoản User không thể sử dụng chức năng quản lý này.</br>
 
-
-    Vì thời gian được tiếp xúc với ngôn ngữ PHP cũng như thời gian thực hiện dự án không được nhiều nên khó tránh khỏi
+Kết: Vì thời gian được tiếp xúc với ngôn ngữ PHP cũng như thời gian thực hiện dự án không được nhiều nên khó tránh khỏi
 các sai sót, nhóm mong nhận được sự giúp đỡ và nhận xét từ cô và các bạn. Nhóm chúng em xin chân thành cảm ơn.
