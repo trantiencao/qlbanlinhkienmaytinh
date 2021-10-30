@@ -105,25 +105,40 @@
             <div class="one_half">
                 <!-- Content Wrapper -->
                 <div id="content-wrapper" class="d-flex flex-column">
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <div class="search-input">
-                                <i class="fa fa-search"></i>
-                                <input type="text" placeholder="Search for anything" />
-                            </div>
-                            <div class="input-group-append" style="margin-left: 10px; float: left;">
-                                <form action="" method="POST">
-                                    <button class="btn btn-primary" type="submit" name="btn_search">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                    <
-                                </form>
-                            </div>
+                    <form  action="" method="GET" class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="search-input">
+                            <input type="text" name="tenmathang" placeholder="Search for anything" 
+                            value="<?php echo (isset($_GET['tenmathang'])) ? $_GET['tenmathang'] : ''; ?>"/>
                         </div>
                     </form>
                 </div>
             </div>
         </header>
+        <?php
+        require("admin/autoload/autoload.php");
+        if($_SERVER['REQUEST_METHOD']=='GET' && !empty($_GET['tenmathang'])) {
+            $tenmathang=$_GET['tenmathang'];	
+                
+            $sql= "SELECT * FROM `product` ORDER BY product.sale LIKE '%$tenmathang%' LIMIT $perRow,$rowPerpage";
+    
+            $query=mysqli_query($connect,$sql);
+            if(mysqli_num_rows($query) > 0) {
+                $rows=mysqli_num_rows($query);
+                echo "<div align='center'><b>Có $rows sản phẩm được tìm thấy.</b></div>";
+                echo "<br>";
+            } else {
+                echo "<div align='center'><b>Không tìm thấy sản phẩm phù hợp</b></div>";
+                echo "<br>";
+                $sql = "SELECT * FROM `product` ORDER BY product.sale ";
+                $query=mysqli_query($connect,$sql);
+            }
+            
+        } else {
+            $sql = "SELECT * FROM `product` ORDER BY product.sale ";
+            $query=mysqli_query($connect,$sql);
+        }
+        
+        ?>               
         <nav id="mainav" class="hoc clear">
             <ul class="clear">
                 <li><a href="/qlbanlinhkienmaytinh/cpu.php">CPU - Bộ Xử Lí</a></li>

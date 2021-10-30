@@ -84,7 +84,7 @@ $soLuongDonHang  = mysqli_num_rows($query)
         if($_SERVER['REQUEST_METHOD']=='GET' && !empty($_GET['madon'])) {
             $madon=$_GET['madon'];	
                 
-            $sql= "SELECT * FROM `product` WHERE `name` LIKE '%$tensanpham%' LIMIT $perRow,$rowPerpage";
+            $sql= "SELECT * FROM `order` WHERE pending = 1 LIMIT $perRow,$rowPerpage";
     
             $query=mysqli_query($connect,$sql);
             if(mysqli_num_rows($query) > 0) {
@@ -92,12 +92,12 @@ $soLuongDonHang  = mysqli_num_rows($query)
                 echo "<div align='center'><b>Có $rows đơn hàng được tìm thấy.</b></div>";
             } else {
                 echo "<div align='center'><b>Không có giá trị phù hợp</b></div>";
-                $sql = "SELECT * FROM `product` LIMIT $perRow,$rowPerpage";
+                $sql = "SELECT * FROM `order` WHERE pending = 1 LIMIT $perRow,$rowPerpage";
                 $query=mysqli_query($connect,$sql);
             }
             
         } else {
-            $sql = "SELECT * FROM `product` LIMIT $perRow,$rowPerpage";
+            $sql = "SELECT * FROM `order` LIMIT $perRow,$rowPerpage";
             $query=mysqli_query($connect,$sql);
         }
     ?>
@@ -141,7 +141,7 @@ $soLuongDonHang  = mysqli_num_rows($query)
                     </tbody>
 
                 </table>
-                <ul class="pagination">
+                <ul class="pagination" style="justify-content: center;">
                     <?php
                     for ($t = 1; $t <= $totalPages; $t++)
                         echo "<li class='page-item'><a class='page-link' href='index.php?pages=$t'>Trang $t</a></li>";

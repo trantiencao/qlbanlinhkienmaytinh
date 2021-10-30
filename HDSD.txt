@@ -1,0 +1,40 @@
+                                        *File giới thiệu*
+ <h2>TEAMWORK PHÁT TRIỂN PHẦN MỀM MÃ NGUỒN MỞ</h2>
+ <h2>GVBM: Th.S Lê Thị Bích Hằng</h2>
+Chủ đề: Trang web quản lý và bán linh kiện máy tính TTC Computer
+
+Nhóm gồm 5 thành viên: 
+    - Hồ Nguyễn Thanh Thiện
+    - Võ Sơn Vang
+    - Võ Minh Toàn
+    - Trần Tiến Cao
+    - Lê Quang Hưởng
+
+Trang web có các chức năng và được phân chia như sau:
+    - Xây dựng chức năng đăng ký, đăng nhập, đổi mật khẩu, phân quyền: Trần Tiến Cao
+    - Xây dựng chức năng chi tiết sản phẩm, giỏ hàng, quản lý đơn hàng: Hồ Nguyễn Thanh Thiện
+    - Xây dựng chức năng thêm, xóa sản phẩm: Lê Quang Hưởng
+    - Xây dựng chức năng tìm kiếm và khung trang admin: Võ Sơn Vang
+    - Xây dụng và thiết kế Cơ sở dữ liệu: Võ Minh Toàn
+
+* Tên cở sở dữ liệu là "qlbanlinhkienmaytinh"
+sử dụng file -> qlbanlinhkienmaytinh.sql ở thư mục gốc qlbanlinhkienmaytinh/qlbanlinhkienmaytinh.sql để nhập cơ sở dữ liệu
+* Admin account: 
+    ID: admin@php.hoclai - Password: 123
+* Với user account các bạn có thể đăng kí account mới để đăng nhập.
+
+1, Vào giao diện đầu tiên của web sẽ là Trang chủ, vì là trang web bán linh kiện máy tính 
+nên phần này sẽ chủ yếu để giới các sản phẩm của cửa hàng.
+2, Nếu muốn đặt hàng thì khách bắt buộc phải tạo tài khoản và đăng nhập tài khoản.
+Nút đăng nhập sẽ nằm ở góc phải của Trang chủ.
+3, Nhóm đã phân quyền cho 2 nhóm người sử dụng đó là User(người mua hàng) và Admin(người quản lý - bán hàng).
+Các bạn có thể đăng nhập vào trang web theo các tài khoản đã giới thiệu ở trên.
+4, Nhóm tài khoản User thì sau khi đăng nhập sẽ có chức năng đặt hàng.
+Để mua sản phẩm thì User phải thêm sản phẩm vào giỏ và đặt hàng.
+5, Nhóm tài khoản Admin sau khi đăng nhập sẽ có thể đến phần giao diện bán hàng và cả chức năng quản lý đơn hàng,
+quản lý thêm xóa sửa sản phẩm.
+Nhóm đã phân quyền để nhóm tài khoản User không thể sử dụng chức năng quản lý này.
+
+
+    Vì thời gian được tiếp xúc với ngôn ngữ PHP cũng như thời gian thực hiện dự án không được nhiều nên khó tránh khỏi
+các sai sót, nhóm mong nhận được sự giúp đỡ và nhận xét từ cô và các bạn. Nhóm chúng em xin chân thành cảm ơn.

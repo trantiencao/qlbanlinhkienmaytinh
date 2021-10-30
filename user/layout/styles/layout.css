@@ -408,6 +408,25 @@ input:focus, textarea:focus, *:required:focus{border-color:#56AED4;}
 
 #backtotop{color:#FFFFFF; background-color:#F7A804;}
 
+/* Main code */
+  
+	.search-input {
+        border-radius: 8px;
+        border: 1px solid #a7a8b0;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        color: #a7a8b0;
+    }
+
+    .search-input input {
+        padding: 0 15px;
+        outline: none;
+        border: none;
+        line-height: normal;
+        width: 100%;
+    }
+
 
 /* Tables + Comments */
 table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}

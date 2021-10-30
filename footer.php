@@ -64,7 +64,7 @@
 <div class="wrapper row5">
   <div style="text-align: center;">
     
-    <p>Copyleft 2020 - <a href="#">TTC</a></p>
+    <p>Copyleft 2021 - <a href="#">TTC Computer</a></p>
     
   </div>
 </div>
