@@ -12,11 +12,11 @@ Nhóm gồm 5 thành viên: </br>
     - Trần Tiến Cao
     - Lê Quang Hưởng
 
-Trang web có các chức năng và được phân chia như sau:
-    - Xây dựng chức năng đăng ký, đăng nhập, đổi mật khẩu, phân quyền: Trần Tiến Cao
-    - Xây dựng chức năng chi tiết sản phẩm, giỏ hàng, quản lý đơn hàng: Hồ Nguyễn Thanh Thiện
-    - Xây dựng chức năng thêm, xóa sản phẩm: Lê Quang Hưởng
-    - Xây dựng chức năng tìm kiếm và khung trang admin: Võ Sơn Vang
+Trang web có các chức năng và được phân chia như sau: </br>
+    - Xây dựng chức năng đăng ký, đăng nhập, đổi mật khẩu, phân quyền: Trần Tiến Cao</br>
+    - Xây dựng chức năng chi tiết sản phẩm, giỏ hàng, quản lý đơn hàng: Hồ Nguyễn Thanh Thiện</br>
+    - Xây dựng chức năng thêm, xóa sản phẩm: Lê Quang Hưởng</br>
+    - Xây dựng chức năng tìm kiếm và khung trang admin: Võ Sơn Vang</br>
     - Xây dụng và thiết kế Cơ sở dữ liệu: Võ Minh Toàn
 
 * Tên cở sở dữ liệu là "qlbanlinhkienmaytinh"
