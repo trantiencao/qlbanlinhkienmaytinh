@@ -5,7 +5,7 @@
  <h2>GVBM: Th.S Lê Thị Bích Hằng</h2>
 Chủ đề: Trang web quản lý và bán linh kiện máy tính TTC Computer
 
-Nhóm gồm 5 thành viên: 
+Nhóm gồm 5 thành viên: </br>
     - Hồ Nguyễn Thanh Thiện
     - Võ Sơn Vang
     - Võ Minh Toàn
