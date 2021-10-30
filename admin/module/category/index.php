@@ -123,7 +123,7 @@
                                     <?php
                                         for($t = 1; $t <= $totalPages; $t++)
                                         {
-                                            $rows;
+                                        
                                             echo "<li class='page-item'><a class='page-link' href='index.php?pages=$t'>Trang $t</a></li>";
                                         }
                                     ?>
