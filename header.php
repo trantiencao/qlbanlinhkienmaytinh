@@ -52,7 +52,7 @@
             <div class="fl_left">
                 <ul class="nospace">
                     <li><a href="index.php"><i class="fas fa-home fa-lg"></i></a></li>
-                    <li><a class="js-scroll-trigger" href="#giamgia">Siêu giảm giá</a></li>
+                    <li><a class="js-scroll-trigger" href="#giamgia">Siêu giảm giá nha</a></li>
                     <li><a class="js-scroll-trigger" href="#moinhat">Sản phẩm mới nhất</a></li>
                     <?php
                     if (isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['level'] == 1) {
