@@ -1,8 +1,8 @@
-<h2><img style="float: left" src="NTU_logo.png" width="50" height="50"><center> TEAMWORK PHÁT TRIỂN PHẦN MỀM MÃ NGUỒN MỞ</center></h2>
-<h3>Khoa Công nghệ thông tin, Trường đại học Nha Trang</h3>
+<h1><img style="float: left" src="NTU_logo.png" width="50" height="50"><center> TEAMWORK PHÁT TRIỂN PHẦN MỀM MÃ NGUỒN MỞ</center></h1>
+<h2>Khoa Công nghệ thông tin, Trường đại học Nha Trang</h2>
                                        
-<h3>GVBM: Th.S Lê Thị Bích Hằng</h3>
-<h4>Chủ đề: Trang web quản lý và bán linh kiện máy tính TTC Computer</h4>
+<h2>GVBM: Th.S Lê Thị Bích Hằng</h2>
+<h3>Chủ đề: Trang web quản lý và bán linh kiện máy tính TTC Computer</h3>
 
 Nhóm gồm 5 thành viên: </br>
     - Hồ Nguyễn Thanh Thiện
