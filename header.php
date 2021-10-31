@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="vi">
 
-    <head>
-        <title>TTC computer</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <link href="user/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-        <link href="./CSS/header.css" rel="stylesheet" type="text/css" media="all">
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <title>TTC computer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="user/layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./CSS/header.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
+    <!-- Bootstrap core JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <!-- Core theme JS-->
-        <script src="user/layout/scripts/script.js"></script>
-    </head>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Contact form JS-->
+
+    <!-- Core theme JS-->
+    <script src="user/layout/scripts/script.js"></script>
+</head>
 
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+if (!isset($_SESSION)) {
+    session_start();
+}
 
-    //error_reporting(0);
-    // session_destroy(); 
-    // Click dang nhap thi chuyen den webpage login
-    if (isset($_POST['login'])) {
-        header('Location: login.php');
-        //redirectUrl('login.php');
-    }
+//error_reporting(0);
+// session_destroy(); 
+// Click dang nhap thi chuyen den webpage login
+if (isset($_POST['login'])) {
+    header('Location: login.php');
+    //redirectUrl('login.php');
+}
 
-    if (isset($_POST['logout'])) {
-        unset($_SESSION['login']);
-        // session_unset($_SESSION["login"]);
-        if (isset($_SESSION['login'])) {
-            $_SESSION['login'] = false;
-            //session_unset($_SESSION["login"]);
-        }
-        if (isset($_SESSION['email']))
-            unset($_SESSION['email']);
+if (isset($_POST['logout'])) {
+    unset($_SESSION['login']);
+    // session_unset($_SESSION["login"]);
+    if (isset($_SESSION['login'])) {
+        $_SESSION['login'] = false;
+        //session_unset($_SESSION["login"]);
     }
+    if (isset($_SESSION['email']))
+        unset($_SESSION['email']);
+}
 ?>
 
 <body id="top">
@@ -52,7 +55,7 @@
             <div class="fl_left">
                 <ul class="nospace">
                     <li><a href="index.php"><i class="fas fa-home fa-lg"></i></a></li>
-                    <li><a class="js-scroll-trigger" href="#giamgia">Siêu giảm giá nha</a></li>
+                    <li><a class="js-scroll-trigger" href="#giamgia">Siêu giảm giá</a></li>
                     <li><a class="js-scroll-trigger" href="#moinhat">Sản phẩm mới nhất</a></li>
                     <?php
                     if (isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['level'] == 1) {
@@ -68,14 +71,22 @@
                         <?php
                         if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
                         ?>
-                            <li>
-                                <?php
-                                echo  $_SESSION["email"];
-                                ?>
-                            </li>
-                            <li>
-                                <!-- <button style="background: transparent; border: none" type="submit" name="logout" value="logout"><a class="rgtspace-5" href="">Đăng xuất</a></button> -->
-                                <input type="submit" name="logout" value="ĐĂNG XUẤT" style="background: transparent; border: none; cursor: pointer;">
+                            <li class="dropdown show no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <?php echo $_SESSION['name']; ?>
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu shadow" aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="/qlbanlinhkienmaytinh/reset_password.php">
+                                        <input type="button" name="resetpassword" value="Reset Password" style="background: transparent; color: black; border: none; cursor: pointer;">
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item">
+                                        <form action="" method="post">
+                                            <input type="submit" name="logout" value="Logout" style="background: transparent; color: black; border: none; cursor: pointer;">
+                                        </form>
+                                    </a>
+                                </div>
                             </li>
                             <li>
                                 <a href="cart.php"><i style="color:white; font-size:20px;" class="fas fa-shopping-cart"></i></a>
@@ -105,40 +116,24 @@
             <div class="one_half">
                 <!-- Content Wrapper -->
                 <div id="content-wrapper" class="d-flex flex-column">
-                    <form  action="" method="GET" class=" d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="search-input">
-                            <input type="text" name="tenmathang" placeholder="Search for anything" 
-                            value="<?php echo (isset($_GET['tenmathang'])) ? $_GET['tenmathang'] : ''; ?>"/>
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <div class="search-input">
+                                <i class="fa fa-search"></i>
+                                <input type="text" placeholder="Search for anything" />
+                            </div>
+                            <div class="input-group-append" style="margin-left: 10px; float: left;">
+                                <form action="" method="POST">
+                                    <button class="btn btn-primary" type="submit" name="btn_search">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
         </header>
-        <?php
-        require("admin/autoload/autoload.php");
-        if($_SERVER['REQUEST_METHOD']=='GET' && !empty($_GET['tenmathang'])) {
-            $tenmathang=$_GET['tenmathang'];	
-                
-            $sql= "SELECT * FROM `product` ORDER BY product.sale LIKE '%$tenmathang%' LIMIT $perRow,$rowPerpage";
-    
-            $query=mysqli_query($connect,$sql);
-            if(mysqli_num_rows($query) > 0) {
-                $rows=mysqli_num_rows($query);
-                echo "<div align='center'><b>Có $rows sản phẩm được tìm thấy.</b></div>";
-                echo "<br>";
-            } else {
-                echo "<div align='center'><b>Không tìm thấy sản phẩm phù hợp</b></div>";
-                echo "<br>";
-                $sql = "SELECT * FROM `product` ORDER BY product.sale ";
-                $query=mysqli_query($connect,$sql);
-            }
-            
-        } else {
-            $sql = "SELECT * FROM `product` ORDER BY product.sale ";
-            $query=mysqli_query($connect,$sql);
-        }
-        
-        ?>               
         <nav id="mainav" class="hoc clear">
             <ul class="clear">
                 <li><a href="/qlbanlinhkienmaytinh/cpu.php">CPU - Bộ Xử Lí</a></li>
