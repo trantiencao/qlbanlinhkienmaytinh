@@ -14,8 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 </head>
 <?php
+session_start();
+error_reporting(0);
 if (!isset($_SESSION)) {
-    session_start();
+    $now = time(); // Checking the time now when home page starts.
+    if ($now > $_SESSION['expire']) {
+        session_destroy();
+        header('Location: /qlbanlinhkienmaytinh/login.php');
+    }
 }
 error_reporting(0);
 if (isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['level'] != 1)
@@ -151,7 +157,7 @@ if (isset($_POST['logout'])) {
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-white big"><?php echo "Xin chào " . $_SESSION['name']; ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-white big"><?php echo $_SESSION['name']; ?></span>
                                 <i class="fas fa-user-shield"></i>
                             </a>
                             <!-- Dropdown - User Information -->

@@ -54,6 +54,9 @@ if (isset($_POST["btn_submit"])) {
                 $_SESSION['name'] = $data["name"];
                 $_SESSION['level'] = $data["level"];
                 $_SESSION["login"] = true;
+                $_SESSION['start'] = time(); // Taking now logged in time.
+                // Ending a session in 30 minutes from the starting time.
+                $_SESSION['expire'] = $_SESSION['start'] + (60*1);
             }
             // Thực thi hành động sau khi lưu thông tin vào session
             if ($_SESSION['level'] == 1) {
@@ -87,7 +90,7 @@ if (isset($_POST["btn_submit"])) {
                                     <form class="user" method="POST">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user" id="exampleInputEmail" required aria-describedby="emailHelp" name="email" placeholder="Enter Email Address..." required value="<?php if (isset($_POST['email'])) echo $_POST['email'];
-                                                                                                                                                                                                                    else echo ""; ?>">
+                                                                                                                                                                                                                                        else echo ""; ?>">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" name="password" id="exampleInputPassword" required placeholder="Password">
