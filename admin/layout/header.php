@@ -11,32 +11,29 @@
     <link href="/qlbanlinhkienmaytinh/public/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="/qlbanlinhkienmaytinh/public/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="/qlbanlinhkienmaytinh/public/admin/css/sb-admin-2.min.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 </head>
 <?php
-    if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
+if (!isset($_SESSION)) {
+    session_start();
+}
+error_reporting(0);
+if (isset($_SESSION['login']) && $_SESSION['login'] == true && $_SESSION['level'] != 1)
+    header('Location: /qlbanlinhkienmaytinh');
 
-    //error_reporting(0);
-    // session_destroy(); 
-    
-    if (isset($_POST['logout'])) {
-        unset($_SESSION['login']);
-        // session_unset($_SESSION["login"]);
-        if (isset($_SESSION['login'])) {
-            $_SESSION['login'] = false;
-            //session_unset($_SESSION["login"]);
-        }
-        if (isset($_SESSION['email']))
-            unset($_SESSION['email']);
-        if (isset($_SESSION['password']))
-            unset($_SESSION['password']);
-        header('Location: /qlbanlinhkienmaytinh');
+if (isset($_POST['logout'])) {
+    unset($_SESSION['login']);
+    // session_unset($_SESSION["login"]);
+    if (isset($_SESSION['login'])) {
+        $_SESSION['login'] = false;
+        //session_unset($_SESSION["login"]);
     }
+    if (isset($_SESSION['email']))
+        unset($_SESSION['email']);
+    if (isset($_SESSION['password']))
+        unset($_SESSION['password']);
+    header('Location: /qlbanlinhkienmaytinh');
+}
 ?>
 
 <body id="page-top">
@@ -61,7 +58,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            
+
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -77,13 +74,11 @@
 
             <!-- Nav Item - Charts -->
             <li class="<?php echo isset($open) && $open == 'category' ? 'active' : '' ?> nav-item">
-                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePagess"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePagess" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-list-ul"></i>
                     <span>Danh Mục</span>
                 </a>
-                <div id="collapsePagess" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePagess" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/qlbanlinhkienmaytinh/admin/module/category/add.php">Thêm mới</a>
                         <a class="collapse-item" href="/qlbanlinhkienmaytinh/admin/module/category/index.php">Danh sách danh mục</a>
@@ -92,13 +87,11 @@
             </li>
 
             <li class="<?php echo isset($open) && $open == 'product' ? 'active' : '' ?> nav-item">
-                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePagesss"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePagesss" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-list-ul"></i>
                     <span>Sản Phẩm</span>
                 </a>
-                <div id="collapsePagesss" class="collapse" aria-labelledby="headingPages"
-                    data-parent="#accordionSidebar">
+                <div id="collapsePagesss" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="/qlbanlinhkienmaytinh/admin/module/product/add.php">Thêm mới</a>
                         <a class="collapse-item" href="/qlbanlinhkienmaytinh/admin/module/product/index.php">Danh sách sản phẩm</a>
@@ -135,18 +128,14 @@
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                         <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -161,23 +150,19 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Xin chào ".$_SESSION['name']; ?></span>
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo "Xin chào " . $_SESSION['name']; ?></span>
                                 <i class="fas fa-user-shield"></i>
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <input type="button" value="Profile"
-                                        style="background: transparent; color: black; border: none; cursor: pointer;">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="/qlbanlinhkienmaytinh/reset_password.php">
+                                    <input type="button" name="resetpassword" value="Reset Password" style="background: transparent; color: black; border: none; cursor: pointer;">
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item">
                                     <form action="" method="post">
-                                        <input type="submit" name="logout" value="Logout"
-                                            style="background: transparent; color: black; border: none; cursor: pointer;">
+                                        <input type="submit" name="logout" value="Logout" style="background: transparent; color: black; border: none; cursor: pointer;">
                                     </form>
                                 </a>
                             </div>
