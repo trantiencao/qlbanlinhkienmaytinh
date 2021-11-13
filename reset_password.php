@@ -1,25 +1,25 @@
 <?php
 session_start();
 error_reporting(0);
-
 if (isset($_SESSION["login"]) && $_SESSION["login"] == true) {
     $emailsession = $_SESSION["email"];
 } else
     header('Location: /qlbanlinhkienmaytinh');
-
+require("admin/autoload/autoload.php");
 if (isset($_REQUEST["btn_submit"])) {
     if (isset($_POST["passwordOld"]) && isset($_POST["newpassword"]) && isset($_POST["repeatnewpassword"])) {
+        $passwordOld = md5($_POST["passwordOld"]);
         $sql = "SELECT * FROM user WHERE email = '$emailsession'";
         $query = mysqli_query($connect, $sql);
-        if (mysqli_num_rows($query) != 0) {
+        if (mysqli_num_rows($query) <> 0) {
             while ($data = mysqli_fetch_array($query)) {
                 $_SESSION["passwordOld"] = $data["password"];
             }
-            if (md5($_POST["passwordOld"]) == $_SESSION["passwordOld"]) {
+            if ($_SESSION["passwordOld"] == $passwordOld) {
                 if ($_POST["newpassword"] == $_POST["repeatnewpassword"]) {
                     $newpassword = md5($_POST["newpassword"]);
-                    $sqlupdate = "UPDATE `user` SET `password`='$newpassword' WHERE user.email='$emailsession'";
-                    $result = mysqli_query($connect, $query);
+                    $sqlupdate = "UPDATE `user` SET `password`='$newpassword' WHERE email='$emailsession'";
+                    $result = mysqli_query($connect, $sqlupdate);
                     if ($result) {
                         echo "<script type='text/javascript'>alert('Đổi mật khẩu thành công');</script>";
                         header('Location: /qlbanlinhkienmaytinh');

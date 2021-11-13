@@ -1,4 +1,5 @@
 <?php $title = 'Sửa danh mục'; ?>
+<?php require ("../../layout/header.php"); ?>
 <?php
     $open = "category";
      require ("../../autoload/autoload.php");
@@ -38,7 +39,7 @@
     }
 ?>
 
-<?php require ("../../layout/header.php"); ?>
+
                     <!-- Begin Page Content -->
                     <h1 align="center">Sửa Danh Mục</h1>
                     <div class="col-md-12">

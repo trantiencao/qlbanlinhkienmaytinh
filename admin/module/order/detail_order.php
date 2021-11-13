@@ -1,6 +1,5 @@
 <?php $title = 'Chi tiết đơn hàng'; ?>
-<?php session_start();
-error_reporting(0);
+<?php
 $open = 'order';
 require("../../layout/header.php");
 require("../../autoload/autoload.php");

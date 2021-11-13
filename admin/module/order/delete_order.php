@@ -1,8 +1,8 @@
 <?php
 $open = 'order';
-    require ("autoload/autoload.php");
+    require ("../../autoload/autoload.php");
         $id= $_GET['id'];
-        $query ="DELETE FROM `order` WHERE  id=$id";
+        $query ="DELETE FROM `order` WHERE id='$id'";
         $resultd= mysqli_query($connect,$query);
         if($resultd)
         {

@@ -1,4 +1,5 @@
 <?php $title = 'Thêm sản phẩm'; ?>
+<?php require ("../../layout/header.php"); ?>
 <?php
     $open = "product";
     require ("../../autoload/autoload.php");
@@ -78,7 +79,7 @@
      }
 ?>
 
-<?php require ("../../layout/header.php"); ?>
+
                     <!-- Begin Page Content -->
                     <h1 align="center">Thêm Mới Sản Phẩm</h1>
                     <div class="col-md-12">

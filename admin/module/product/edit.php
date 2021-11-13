@@ -1,4 +1,5 @@
 <?php $title = 'Sửa sản phẩm'; ?>
+<?php require("../../layout/header.php"); ?>
 <?php
 $open = "product";
 $capacityold = "";
@@ -67,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php require("../../layout/header.php"); ?>
+
 <!-- Begin Page Content -->
 <h1 align="center">Chỉnh Sửa Sản Phẩm</h1>
 <div class="col-md-12">

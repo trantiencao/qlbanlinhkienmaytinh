@@ -1,10 +1,11 @@
 <?php $title = 'Danh sách danh mục'; ?>
+<?php require ("../../layout/header.php"); ?>
 <?php
     $open = "category";
     require ("../../autoload/autoload.php");
     require ("../../../libraries/database.php");
 ?>
-<?php require ("../../layout/header.php"); ?>
+
                     <!-- Begin Page Content -->
 
                     <h1 align="center">Danh Sách Danh Mục Sản Phẩm</h1>

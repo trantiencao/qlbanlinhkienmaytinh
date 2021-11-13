@@ -1,0 +1,36 @@
+NEW CALLBACK FUNCTION:
+======================
+
+We have had requests for a method to process the results of sending emails 
+through PHPMailer. In this new release, we have implemented a callback
+function that passes the results of each email sent (to, cc, and/or bcc). 
+We have provided an example that echos the results back to the screen. The
+callback function can be used for any purpose. With minor modifications, the
+callback function can be used to create CSV logs, post results to databases,
+etc.
+
+Please review the test.php script for the example.
+
+It's pretty straight forward.
+
+Enjoy!
+Andy
+
+
+
+CHỨC NĂNG GỌI LẠI MỚI: 
+====================== 
+
+Chúng tôi đã yêu cầu một phương pháp xử lý kết quả gửi email thông qua PHPMailer. 
+Trong bản phát hành mới này, chúng tôi đã triển khai chức năng gọi lại chuyển 
+kết quả của mỗi email được gửi (tới, cc và/hoặc bcc). Chúng tôi đã cung cấp 
+một ví dụ hiển thị kết quả trở lại màn hình. Chức năng gọi lại có thể được 
+sử dụng cho bất kỳ mục đích nào. Với những sửa đổi nhỏ, hàm gọi lại có thể được 
+sử dụng để tạo nhật ký CSV, đăng kết quả lên cơ sở dữ liệu, v.v. 
+
+Vui lòng xem lại tập lệnh test.php để biết ví dụ. 
+
+Nó khá thẳng về phía trước. 
+
+Thưởng thức! 
+Andy

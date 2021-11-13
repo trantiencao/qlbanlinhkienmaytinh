@@ -1,9 +1,10 @@
 <?php $title = 'Danh sách sản phẩm'; ?>
+<?php require("../../layout/header.php"); ?>
 <?php
 $open = "product";
 require("../../autoload/autoload.php");
 ?>
-<?php require("../../layout/header.php"); ?>
+
 <!-- Begin Page Content -->
 <h1 align="center">Danh Sách Sản Phẩm</h1>
 

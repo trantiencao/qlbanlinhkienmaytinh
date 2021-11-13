@@ -1,7 +1,8 @@
 <?php $title = 'Thêm danh mục'; ?>
+<?php require ("../../layout/header.php"); ?>
 <?php
     $open = "category";
-     require ("../../autoload/autoload.php");
+    require ("../../autoload/autoload.php");
      
     if($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -26,7 +27,7 @@
      }
 ?>
 
-<?php require ("../../layout/header.php"); ?>
+
                     <!-- Begin Page Content -->
                     <h1 align="center">Thêm Mới Danh Mục</h1>
                     <div class="col-md-12">
