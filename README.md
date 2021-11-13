@@ -20,6 +20,8 @@ Trang web có các chức năng và được phân chia như sau: </br>
 
 * Tên cở sở dữ liệu là "qlbanlinhkienmaytinh"
 sử dụng file -> qlbanlinhkienmaytinh.sql ở thư mục gốc qlbanlinhkienmaytinh/qlbanlinhkienmaytinh.sql để nhập cơ sở dữ liệu
+* Các bạn vui lòng tạo mới một cơ sơ dữ liệu có tên "qlbanlinhkienmaytinh", sau khi tạo mới và vào phần import để import file "qlbanlinhkienmaytinh.sql"
+vào cơ sở dữ liệu vừa tạo trên.
 * Admin account: 
     ID: admin@php.hoclai - Password: 123
 * Với user account các bạn có thể đăng kí account mới để đăng nhập.
