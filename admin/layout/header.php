@@ -16,9 +16,9 @@
 <?php
 session_start();
 error_reporting(0);
-if (!isset($_SESSION)) {
-    $now = time(); // Checking the time now when home page starts.
-    if ($now > $_SESSION['expire']) {
+if (isset($_SESSION)) {
+    // Checking the time now when home page starts.
+    if (time() > $_SESSION['expire']) {
         unset($_SESSION['login']);
     // session_unset($_SESSION["login"]);
     if (isset($_SESSION['login'])) {

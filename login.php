@@ -40,7 +40,7 @@ if (isset($_POST["btn_submit"])) {
     if ($email == "" || $password == "") {
         echo "<script type='text/javascript'>alert('Vui lòng nhập đầy đủ các trường!');</script>";
     } else {
-        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password' ";
+        $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
         $query = mysqli_query($connect, $sql);
         $num_rows = mysqli_num_rows($query);
 
@@ -56,7 +56,7 @@ if (isset($_POST["btn_submit"])) {
                 $_SESSION["login"] = true;
                 $_SESSION['start'] = time(); // Taking now logged in time.
                 // Ending a session in 30 minutes from the starting time.
-                $_SESSION['expire'] = $_SESSION['start'] + (60*1);
+                $_SESSION['expire'] = $_SESSION['start'] + (10*1);
             }
             // Thực thi hành động sau khi lưu thông tin vào session
             if ($_SESSION['level'] == 1) {
