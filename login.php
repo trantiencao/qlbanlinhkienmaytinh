@@ -56,7 +56,7 @@ if (isset($_POST["btn_submit"])) {
                 $_SESSION["login"] = true;
                 $_SESSION['start'] = time(); // Taking now logged in time.
                 // Ending a session in 30 minutes from the starting time.
-                $_SESSION['expire'] = $_SESSION['start'] + (10*1);
+                $_SESSION['expire'] = $_SESSION['start'] + (60*3);
             }
             // Thực thi hành động sau khi lưu thông tin vào session
             if ($_SESSION['level'] == 1) {
