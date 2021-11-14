@@ -25,20 +25,23 @@
 <?php
 session_start();
 error_reporting(0);
-// Checking the time now when home page starts.
-if (time() > $_SESSION['expire']) {
-    unset($_SESSION['login']);
-    // session_unset($_SESSION["login"]);
-    if (isset($_SESSION['login'])) {
-        $_SESSION['login'] = false;
-        //session_unset($_SESSION["login"]);
+if (isset($_SESSION['email'])){
+    // Checking the time now when home page starts.
+    if (time() > $_SESSION['expire']) {
+        unset($_SESSION['login']);
+        // session_unset($_SESSION["login"]);
+        if (isset($_SESSION['login'])) {
+            $_SESSION['login'] = false;
+            //session_unset($_SESSION["login"]);
+        }
+        if (isset($_SESSION['email']))
+            unset($_SESSION['email']);
+        if (isset($_SESSION['password']))
+            unset($_SESSION['password']);
+        header('Location: login.php');
     }
-    if (isset($_SESSION['email']))
-        unset($_SESSION['email']);
-    if (isset($_SESSION['password']))
-        unset($_SESSION['password']);
-    header('Location: login.php');
 }
+
 
 //error_reporting(0);
 // session_destroy(); 
