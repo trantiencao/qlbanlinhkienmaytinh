@@ -76,11 +76,12 @@ if (isset($_POST["btn_submit"])) {
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
+                    
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 d-none d-lg-block" style="background: url('https://comdy.vn/content/images/2020/05/php-26.jpg'); background-position: center;
-  background-size: cover;"></div>
+  background-size: cover;"><a href="index.php"><i class="fas fa-home fa-lg"></i></a></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
