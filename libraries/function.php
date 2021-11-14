@@ -68,7 +68,7 @@
         // duong dan url ban dau
         function baseServerName()
         {
-            return 'http://'.$_SERVER["SERVER_NAME"];
+            return 'http://'.$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"];
         }
     }
 

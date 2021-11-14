@@ -72,13 +72,13 @@ if (isset($_REQUEST["btn_submit"])) {
                                     </div>
                                     <form class="user" action="" method="POST">
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="passwordOld" id="exampleInputPassword" placeholder="Password present">
+                                            <input type="password" class="form-control form-control-user" name="passwordOld" id="exampleInputPassword" placeholder="Password present" required value>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="newpassword" id="exampleInputNewPassword" placeholder="New password">
+                                            <input type="password" class="form-control form-control-user" name="newpassword" id="exampleInputNewPassword" placeholder="New password" required value>
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="repeatnewpassword" id="exampleInputRepeatNewPassword" placeholder="Repeat New password">
+                                            <input type="password" class="form-control form-control-user" name="repeatnewpassword" id="exampleInputRepeatNewPassword" placeholder="Repeat New password" required value>
                                         </div>
                                         <input class="btn btn-primary btn-user btn-block" type="submit" name="btn_submit" value="Đổi">
                                     </form>

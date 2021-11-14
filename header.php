@@ -26,7 +26,7 @@
 session_start();
 error_reporting(0);
 // Ending a session in 30 minutes from the starting time.
-$_SESSION['expire'] = $_SESSION['start'] + (60*1);
+$_SESSION['expire'] = $_SESSION['start'] + (60*5);
 if (isset($_SESSION['email'])){
     // Checking the time now when home page starts.
     if (time() > $_SESSION['expire']) {

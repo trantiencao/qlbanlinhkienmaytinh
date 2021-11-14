@@ -71,28 +71,28 @@ if (isset($_POST["btn_submit"])) {
                             <form class="user" method="POST">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name" name="name" value="<?php if (isset($_POST['name'])) echo $_POST['name'];
+                                        <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name" name="name" required value="<?php if (isset($_POST['name'])) echo $_POST['name'];
                                                                                                                                                                 else echo ""; ?>">
                                     </div>
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="number" class="form-control form-control-user" id="exampleFirstName" placeholder="Phone" name="phone" value="<?php if (isset($_POST['phone'])) echo $_POST['phone'];
+                                        <input type="number" class="form-control form-control-user" id="exampleFirstName" placeholder="Phone" name="phone" required value="<?php if (isset($_POST['phone'])) echo $_POST['phone'];
                                                                                                                                                                     else echo ""; ?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Address" name="address" value="<?php if (isset($_POST['address'])) echo $_POST['address'];
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" placeholder="Address" name="address" required value="<?php if (isset($_POST['address'])) echo $_POST['address'];
                                                                                                                                                                     else echo ""; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email" value="<?php if (isset($_POST['email'])) echo $_POST['email'];
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email" required value="<?php if (isset($_POST['email'])) echo $_POST['email'];
                                                                                                                                                                         else echo ""; ?>">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="password">
+                                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required name="password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" name="repeatpassword">
+                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" required name="repeatpassword">
                                     </div>
                                 </div>
                                 <input type="submit" class="btn btn-primary btn-user btn-block" name="btn_submit" value="Register">
